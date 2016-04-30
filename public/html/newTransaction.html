@@ -1,0 +1,49 @@
+<h1 class='text-center'>newTransaction</h1>
+
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+    <button class="btn btn-default btn-lg" ui-sref='account'>Back to Account</button>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-8 col-xs-offset-2">
+
+    <form class="form-horizontal" ng-submit='addTransaction()'>
+
+      <div class="form-group">
+        <label>Description</label>
+        <input type="text" class="form-control" ng-model='newTransaction.name' required>
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" class="form-control" ng-model='newTransaction.transactionDate' required>
+      </div>
+      <div class="form-group">
+        <label class="sr-only">Amount (in dollars)</label>
+        <div class="input-group">
+          <div class="input-group-addon">$</div>
+          <input type="number"
+                 class="form-control"
+                 min=0
+                 step=0.01
+                 ng-model='newTransaction.value'
+                 placeholder="Amount"
+                 required>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="radio-inline">
+          <input type="radio" value="credit" ng-model='type'> Credit
+        </label>
+        <label class="radio-inline">
+          <input type="radio" value="debit" ng-model='type'> Debit
+        </label>
+      </div>
+
+      <button class="btn btn-primary btn-lg">Add Transaction</button>
+
+    </form>   
+
+  </div>
+</div>
+
